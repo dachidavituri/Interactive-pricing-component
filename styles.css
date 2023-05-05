@@ -1,0 +1,260 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@600;800&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 88px 24px;
+  background-image: url("images/bg-pattern.svg");
+  background-repeat: no-repeat;
+  font-family: "Manrope";
+  background-color: #f2f2f2;
+}
+
+.info-cont {
+  text-align: center;
+  background-image: url("images/pattern-circles.svg");
+  background-repeat: no-repeat;
+}
+.info-cont h2 {
+  color: #293356;
+  font-weight: 800;
+  font-size: 20px;
+  line-height: 27px;
+  text-align: center;
+}
+.info-cont p {
+  font-weight: 600;
+  font-size: 13px;
+  line-height: 23px;
+  text-align: center;
+  color: #848ead;
+  width: 180px;
+  margin: auto;
+}
+.main-cont {
+  padding: 33px 24px;
+  background-color: white;
+  margin-top: 98px;
+  border-radius: 8px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+.main-section {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.amount {
+  font-weight: 800;
+  font-size: 12px;
+  line-height: 16px;
+  text-align: center;
+  letter-spacing: 1.71429px;
+  text-transform: uppercase;
+  color: #848ead;
+}
+#range-input {
+  width: 100%;
+  margin-top: 25px;
+}
+.slider {
+  appearance: none;
+  background: #a4f3eb;
+  border-radius: 50px;
+  outline: none;
+  height: 8px;
+}
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 40px;
+  height: 40px;
+  background-image: url("images/icon-slider.svg");
+  background-repeat: no-repeat;
+  background-color: rgba(16, 216, 196, 1);
+  border-radius: 50%;
+  background-position: 50% 50%;
+  cursor: pointer;
+}
+.slider::-webkit-slider-thumb:hover {
+  box-shadow: 0px 15px 30px rgba(0, 255, 231, 0.6);
+  background-color: #7aeadf;
+}
+.quantity {
+  margin: auto;
+}
+#result {
+  font-weight: 800;
+  font-size: 32px;
+  line-height: 44px;
+  letter-spacing: -0.8px;
+  color: #293356;
+  text-align: center;
+  display: inline;
+}
+.year-month {
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 19px;
+  text-align: center;
+  color: #848ead;
+  margin-left: 8px;
+  display: inline;
+}
+.billings {
+  display: flex;
+  text-align: right;
+  column-gap: 5px;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.bill-1 {
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 16px;
+  text-align: center;
+  color: #848ead;
+}
+input[type="checkbox"] {
+  height: 0;
+  width: 0;
+  visibility: hidden;
+}
+
+#check {
+  cursor: pointer;
+  width: 43px;
+  height: 22px;
+  background: grey;
+  display: block;
+  border-radius: 100px;
+  position: relative;
+}
+
+#check:after {
+  content: "";
+  position: absolute;
+  top: 4.5px;
+  left: 4px;
+  width: 14px;
+  height: 14px;
+  background: #fff;
+  border-radius: 90px;
+  transition: 0.35s;
+}
+
+input:checked + #check {
+  background: #7aeadf;
+}
+
+input:checked + #check:after {
+  left: calc(100% - 5px);
+  transform: translateX(-100%);
+}
+.discount-amount {
+  background-color: rgba(254, 237, 232, 1);
+  height: 19px;
+  text-align: center;
+  color: rgba(255, 141, 104, 1);
+  width: 45px;
+  border-radius: 9.5px;
+  font-size: 14px;
+}
+.hr-line {
+  width: 100%;
+  height: 1px;
+  background-color: rgba(236, 240, 251, 1);
+}
+.additional-info {
+  margin: auto;
+  text-align: center;
+}
+.additional-info div {
+  margin-top: 11px;
+}
+.check {
+  display: inline;
+  margin-left: 16px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #848ead;
+}
+.trial-btn {
+  margin-top: 33px;
+  background: #293356;
+  border-radius: 20.5px;
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 16px;
+  text-align: center;
+  color: #becdff;
+  width: 175px;
+  height: 41px;
+  border: none;
+  cursor: pointer;
+}
+@media only screen and (min-width: 768px) {
+  .info-cont h2 {
+    font-size: 28px;
+    line-height: 38px;
+  }
+  .info-cont p {
+    font-size: 15px;
+    width: 100%;
+  }
+  .main-cont {
+    width: 500px;
+  }
+  .main-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr auto;
+    grid-template-areas:
+      "amount result"
+      "range range";
+  }
+
+  .amount {
+    grid-area: amount;
+    align-self: center;
+    margin-top: 15px;
+  }
+
+  .quantity {
+    grid-area: result;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+  .range-slider {
+    grid-column: 1 / 2 span;
+  }
+
+  #result {
+    margin-right: 10px;
+  }
+
+  #range-input {
+    grid-area: range;
+  }
+
+  .billings {
+    justify-content: center;
+    margin-left: 100px;
+    column-gap: 10px;
+  }
+  .additional-info {
+    display: flex;
+    column-gap: 100px;
+  }
+}

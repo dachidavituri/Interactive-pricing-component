@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <title>Frontend Mentor | Interactive pricing component</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="info-cont">
+      <h2>Simple, traffic-based pricing</h2>
+      <p>Sign-up for our 30-day trial. No credit card required.</p>
+    </div>
+    <div class="main-cont">
+      <!-- range div -->
+      <div class="main-section">
+        <div>
+          <p class="amount">100K PAGEVIEWS</p>
+        </div>
+        <div class="range-slider">
+          <label for="range-input">
+            <input
+              type="range"
+              step="1"
+              min="1"
+              max="5"
+              name="range-input"
+              id="range-input"
+              value="3"
+              class="slider"
+            />
+          </label>
+        </div>
+
+        <!-- result div -->
+        <div class="quantity">
+          <p id="result">$16.00</p>
+          <p class="year-month">/ month</p>
+        </div>
+      </div>
+
+      <!-- month-or-year converter-->
+      <div class="billings">
+        <p class="bill-1">Monthly Billing</p>
+        <input type="checkbox" id="switch" /><label
+          for="switch"
+          id="check"
+        ></label>
+
+        <p class="bill-1">Yearly Billing</p>
+        <div class="discount-amount">-25%</div>
+      </div>
+      <!-- hr line -->
+      <div class="hr-line"></div>
+      <!-- last div -->
+      <div class="additional-info">
+        <!-- -------------------- -->
+        <div>
+          <div>
+            <img src="images/icon-check.svg" />
+            <p class="check">Unlimited websites</p>
+          </div>
+          <div>
+            <img src="images/icon-check.svg" />
+            <p class="check">100% data ownership</p>
+          </div>
+          <div>
+            <img src="images/icon-check.svg" />
+            <p class="check">Email reports</p>
+          </div>
+        </div>
+        <!-- ---------------------------- -->
+        <div class="button-trial">
+          <button class="trial-btn">Start my trial</button>
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
